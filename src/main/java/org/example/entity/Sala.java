@@ -7,9 +7,17 @@ public class Sala {
     private int capacidade;
     private boolean disponivel;
 
+    private static long idContador = 0;
 
     public Sala(long id, int numero, int capacidade, boolean disponivel){
         this.id = id;
+        this.numero = numero;
+        this.capacidade = capacidade;
+        this.disponivel = disponivel;
+    }
+
+    public Sala(int numero, int capacidade, boolean disponivel){
+        this.id = idContador++;
         this.numero = numero;
         this.capacidade = capacidade;
         this.disponivel = disponivel;
