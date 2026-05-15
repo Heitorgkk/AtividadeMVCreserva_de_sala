@@ -15,7 +15,7 @@ public class UsuarioView {
         usuarioController = new UsuarioController();
     }
 
-    public void cadastro(){
+    public void menuCadastroUsuario(){
         System.out.println("Insira seu nome: ");
         String nome = input.nextLine();
         System.out.println("Insira seu cpf: ");
