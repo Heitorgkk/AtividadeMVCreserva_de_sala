@@ -15,6 +15,8 @@ public class UsuarioView {
         usuarioController = new UsuarioController();
     }
 
+    // SUGESTÃO ao invés de println colocar print, para que o usário coloque as informações
+    // na mesma linha
     public void cadastro(){
         System.out.println("Insira seu nome: ");
         String nome = input.nextLine();
