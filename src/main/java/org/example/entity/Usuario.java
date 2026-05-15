@@ -6,8 +6,16 @@ public class Usuario {
     private String nome;
     private String cpf;
 
+    private static long idContador = 0;
+
     public Usuario (long id, String nome, String cpf){
         this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
+    public Usuario (String nome, String cpf){
+        this.id = idContador++;
         this.nome = nome;
         this.cpf = cpf;
     }
