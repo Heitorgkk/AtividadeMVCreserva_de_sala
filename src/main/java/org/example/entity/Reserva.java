@@ -11,6 +11,8 @@ public class Reserva {
     private String horario;
     private String status;
 
+    private static long idContador = 0;
+
     public Reserva(long id, Usuario usuario, Sala sala, String data, String horario, String status){
         this.id = id;
         this.usuario = usuario;
@@ -18,7 +20,15 @@ public class Reserva {
         this.data = data;
         this.horario = horario;
         this.status = status;
+    }
 
+    public Reserva(Usuario usuario, Sala sala, String data, String horario, String status){
+        this.id = idContador;
+        this.usuario = usuario;
+        this.sala = sala;
+        this.data = data;
+        this.horario = horario;
+        this.status = status;
     }
 
     public long getId(){
