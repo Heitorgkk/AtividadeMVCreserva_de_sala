@@ -20,6 +20,13 @@ public class Usuario {
         this.cpf = cpf;
     }
 
+    //Usuario temporario (gambiarra que só)
+    public Usuario (String nome, String cpf, boolean temporario){
+        this.id = -1;
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
     public long getId(){
         return id;
     }
