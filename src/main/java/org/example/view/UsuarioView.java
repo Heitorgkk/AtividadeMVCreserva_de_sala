@@ -2,6 +2,8 @@ package org.example.view;
 
 import org.example.controller.UsuarioController;
 import org.example.entity.Usuario;
+import org.example.erros.CredenciaisInvalidasException;
+import org.example.erros.UsuarioJaExisteException;
 
 import java.util.Scanner;
 
@@ -15,17 +17,22 @@ public class UsuarioView {
         usuarioController = new UsuarioController();
     }
 
-    public void menuCadastroUsuario(){
-        System.out.println("Insira seu nome: ");
+
+    public void cadastro(){
+        System.out.print("Insira seu nome: ")
         String nome = input.nextLine();
-        System.out.println("Insira seu cpf: ");
+        System.out.print("Insira seu cpf: ");
         String cpf = input.nextLine();
 
-        boolean sucesso = usuarioController.cadastrarUsuario();
-        if(sucesso){
-            System.out.println("Usuário Cadastrado com sucesso");
-        }else{
-            System.out.println("Usuário não foi possível ser cadastrado");
+        try {
+            usuarioController.cadastrarUsuario(nome, cpf);
+            System.out.println("Usuário cadastrado com sucesso!");
+
+        }catch (UsuarioJaExisteException e){
+            System.out.println(e.getMessage());
+        }catch (CredenciaisInvalidasException e){
+            System.out.println(e.getMessage());
         }
+
     }
 }

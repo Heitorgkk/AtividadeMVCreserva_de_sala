@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class UsuarioRepository {
 
-    private HashMap<Integer, Usuario> usuarios;
+    private HashMap<Long, Usuario> usuarios;
 
     public UsuarioRepository(){
         usuarios = new HashMap<>();
@@ -33,7 +33,12 @@ public class UsuarioRepository {
     }
 
     public void insertUser(Usuario user){
-        usuarios.put(usuarios.size() - 1, user);
+        try {
+            usuarios.put(user.getId(), user);
+        } catch (IndexOutOfBoundsException e) {
+            if (user.getId() < 0) throw new IndexOutOfBoundsException("ID inválido do Usuário: ID de usuário temporário.");
+            else throw new IndexOutOfBoundsException("ID inválido do Usuário: ID fora do escopo.");
+        }
     }
 
 }
