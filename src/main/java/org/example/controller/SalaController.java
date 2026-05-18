@@ -6,7 +6,7 @@ public class SalaController {
 
     SalaService salaService = new SalaService();
 
-    public boolean cadastrarSala(){
+    public boolean cadastrarSala(int numero, int capacidade){
 //      return salaService.
         return true;
     }
