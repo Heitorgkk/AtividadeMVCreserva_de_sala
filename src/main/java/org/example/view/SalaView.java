@@ -1,6 +1,8 @@
 package org.example.view;
 
 import org.example.controller.SalaController;
+import org.example.erros.CredenciaisInvalidasException;
+import org.example.erros.UsuarioJaExisteException;
 
 import java.util.Scanner;
 
@@ -16,11 +18,13 @@ public class SalaView {
         System.out.println("Insira a capacidade da sala: ");
         int capacidade = input.nextInt();
 
-        boolean sucesso = salaController.cadastrarSala();
-        if(sucesso){
-            System.out.println("Cadastro da sala bem sucedido");
-        }else{
-            System.out.println("Cadastro da sala mal sucedido");
+        try{
+            salaController.cadastrarSala(numero,capacidade);
+            System.out.println("Usuário cadastrado com sucesso");
+        }catch(UsuarioJaExisteException e){
+            System.out.println(e.getMessage());
+        }catch(CredenciaisInvalidasException e){
+            System.out.println(e.getMessage());
         }
     }
 }
