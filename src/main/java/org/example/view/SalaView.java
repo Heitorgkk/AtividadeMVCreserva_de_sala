@@ -20,7 +20,7 @@ public class SalaView {
 
         try{
             salaController.cadastrarSala(numero,capacidade);
-            System.out.println("Usuário cadastrado com sucesso");
+            System.out.println("Sala cadastrada com sucesso");
         }catch(UsuarioJaExisteException e){
             System.out.println(e.getMessage());
         }catch(CredenciaisInvalidasException e){
