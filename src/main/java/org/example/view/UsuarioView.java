@@ -18,7 +18,7 @@ public class UsuarioView {
     }
 
 
-    public void cadastro(){
+    public void menuCadastroUsuario(){
         System.out.print("Insira seu nome: ");
         String nome = input.nextLine();
         System.out.print("Insira seu cpf: ");

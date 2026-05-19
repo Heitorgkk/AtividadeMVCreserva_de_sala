@@ -8,7 +8,7 @@ public class ReservaController {
 
     ReservaService reservaService = new ReservaService();
 
-    public void cadastrarReserva(Usuario usuario, Sala sala, String data, String horario, String status){
+    public void cadastrarReserva(String data, String horario, String status){
 //        reservaService.
     }
 }
